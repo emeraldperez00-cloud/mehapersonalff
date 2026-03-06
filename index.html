@@ -6,20 +6,44 @@
 <title>Escort Babylon - Comments</title>
 
 <style>
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#e8e5bf;
+line-height:1.4;
+}
+
+/* IMAGES */
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* PAGE CONTAINER */
+
+.container{
+width:95%;
+max-width:750px;
+margin:auto;
 }
 
 /* HEADER */
 
 .header{
 background:#0b0e3f;
-padding:10px;
-align-items:center;
 display:flex;
+justify-content:center;
+align-items:center;
+padding:10px;
 }
 
 .header img{
@@ -30,11 +54,13 @@ height:55px;
 
 .nav{
 display:flex;
+flex-wrap:wrap;
+justify-content:center;
 background:#c41212;
 }
 
 .nav a{
-padding:10px 18px;
+padding:10px 16px;
 border-right:1px solid #880909;
 }
 
@@ -51,21 +77,23 @@ background:black;
 .comment-header{
 display:flex;
 align-items:center;
+justify-content:center;
 gap:10px;
 padding:20px;
+flex-wrap:wrap;
 }
 
 .comment-header img{
 height:90px;
 }
 
-/* COMMENT AREA */
+/* COMMENTS AREA */
 
 .comments{
-padding-bottom:10px;
-width:92%;
+width:95%;
 max-width:750px;
 margin:auto;
+padding-bottom:120px;
 }
 
 /* COMMENT CARD */
@@ -78,7 +106,7 @@ margin-bottom:18px;
 box-shadow:0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* META */
+/* META TEXT */
 
 .comment-meta{
 font-weight:bold;
@@ -97,7 +125,7 @@ font-size:14px;
 position:relative;
 }
 
-/* ACTIONS */
+/* ACTION BUTTONS */
 
 .actions{
 position:absolute;
@@ -108,7 +136,7 @@ top:8px;
 .actions a{
 font-size:11px;
 font-weight:bold;
-padding:3px 7px;
+padding:4px 7px;
 border-radius:3px;
 text-decoration:none;
 margin-left:4px;
@@ -124,9 +152,7 @@ background:#ff3b3b;
 color:white;
 }
 
-/* FOOTER COMMENT INPUT */
-
-/* FOOTER */
+/* FOOTER BAR */
 
 .comment-input{
 position:fixed;
@@ -139,35 +165,84 @@ display:flex;
 align-items:center;
 padding-left:10px;
 z-index:999;
+box-shadow:0 -3px 6px rgba(0,0,0,0.25);
 }
 
-/* back arrow */
+/* BACK BUTTON */
 
 .comment-input .back-btn{
 height:60px;
 margin-right:10px;
 }
 
-/* big center footer image */
+/* CENTER FOOTER IMAGE */
 
 .comment-input .right-img{
 position:absolute;
-left:55px; /* move closer to arrow */
+left:60px;
 height:100%;
 max-height:85px;
 }
 
-/* MOBILE */
+/* SMALL PHONES */
 
-@media(max-width:600px){
+@media (max-width:480px){
 
-.comment-header{
-flex-direction:column;
-text-align:center;
+.header img{
+height:45px;
 }
 
-.nav{
-flex-wrap:wrap;
+.nav img{
+height:18px;
+}
+
+.comment-header img{
+height:70px;
+}
+
+.comment-meta{
+font-size:13px;
+}
+
+.comment-text{
+font-size:13px;
+}
+
+.comment-input{
+height:70px;
+}
+
+.comment-input .back-btn{
+height:50px;
+}
+
+.comment-input .right-img{
+max-height:70px;
+}
+
+}
+
+/* TABLETS */
+
+@media (min-width:600px){
+
+.comment-header{
+flex-direction:row;
+}
+
+}
+
+/* DESKTOP */
+
+@media (min-width:900px){
+
+.comments{
+max-width:750px;
+margin:auto;
+}
+
+.comment-box{
+margin-bottom:20px;
 }
 
 }
