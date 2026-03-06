@@ -2,49 +2,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Escort Babylon - Comments</title>
 
 <style>
-  img{
-max-width:100%;
-height:auto;
-}
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#efeec8;
+background:#e8e5bf;
 }
 
+/* HEADER */
+
 .header{
-background:#0b0c3a;
+background:#0b0e3f;
 padding:10px;
 display:flex;
 align-items:center;
 }
 
-.logo{
-height:60px;
+.header img{
+height:55px;
 }
 
-/* NAVIGATION */
+/* NAV BAR */
 
 .nav{
-background:#c81414;
 display:flex;
+background:#c41212;
 }
 
 .nav a{
 padding:10px 18px;
-border-right:1px solid #8a0c0c;
+border-right:1px solid #880909;
 }
 
 .nav img{
 height:22px;
 }
 
-.nav a.active{
+.nav .active{
 background:black;
 }
 
@@ -53,61 +51,66 @@ background:black;
 .comment-header{
 display:flex;
 align-items:center;
+gap:10px;
 padding:20px;
 }
 
 .comment-header img{
-height:80px;
+height:90px;
 }
 
-.comment-title{
-margin-left:10px;
-height:40px;
-}
-
-/* COMMENTS */
+/* COMMENT AREA */
 
 .comments{
-width:95%;
-max-width:900px;
+width:92%;
+max-width:750px;
 margin:auto;
 }
 
+/* COMMENT CARD */
+
 .comment-box{
-background:#cfd7c3;
-border-radius:8px;
+background:#cbd7b9;
+border-radius:14px;
+padding:6px;
 margin-bottom:18px;
-box-shadow:0 2px 5px rgba(0,0,0,0.2);
+box-shadow:0 3px 6px rgba(0,0,0,0.2);
 }
+
+/* META */
 
 .comment-meta{
-padding:8px 12px;
-font-size:14px;
-color:#5c6a58;
 font-weight:bold;
+color:#7c8b6a;
+padding:6px 10px;
+font-size:14px;
 }
+
+/* COMMENT TEXT */
 
 .comment-text{
-background:#f5f5f5;
+background:#f3f3f3;
+border-radius:10px;
 padding:12px;
-border-radius:0 0 8px 8px;
+font-size:14px;
+position:relative;
 }
 
-/* ACTION BUTTONS */
+/* ACTIONS */
 
 .actions{
-float:right;
-margin-top:-26px;
-margin-right:10px;
+position:absolute;
+right:10px;
+top:8px;
 }
 
 .actions a{
-text-decoration:none;
-font-size:12px;
+font-size:11px;
 font-weight:bold;
-margin-left:6px;
-padding:4px 8px;
+padding:3px 7px;
 border-radius:3px;
+text-decoration:none;
+margin-left:4px;
 }
 
 .delete{
@@ -120,69 +123,47 @@ background:#ff3b3b;
 color:white;
 }
 
-/* INPUT */
+/* FOOTER COMMENT INPUT */
 
 .comment-input{
 position:fixed;
 bottom:0;
+left:0;
 width:100%;
-background:#e8e8e8;
-padding:10px;
+background:#e6e6e6;
 display:flex;
 align-items:center;
+padding:10px;
+gap:10px;
+}
+
+.comment-input img{
+height:50px;
 }
 
 .comment-input input{
-width:60%;
+flex:1;
 padding:10px;
 border-radius:20px;
 border:1px solid #ccc;
 }
 
-.back-btn{
-width:60px;
-margin-right:10px;
-}
-
 .note{
-font-size:12px;
+font-size:11px;
 color:#555;
-margin-left:15px;
 }
 
-  @media (max-width:600px){
+/* MOBILE */
 
-.nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.nav a{
-padding:8px;
-}
+@media(max-width:600px){
 
 .comment-header{
 flex-direction:column;
-align-items:center;
 text-align:center;
 }
 
-.actions{
-float:none;
-margin:8px 0;
-}
-
-.comment-input{
-flex-direction:column;
-gap:8px;
-}
-
-.comment-input input{
-width:95%;
-}
-
-.note{
-text-align:center;
+.nav{
+flex-wrap:wrap;
 }
 
 }
@@ -195,8 +176,7 @@ text-align:center;
 <!-- HEADER -->
 
 <div class="header">
-<img class="logo"
-src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover.png">
+<img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover.png">
 </div>
 
 <!-- NAV -->
@@ -221,8 +201,7 @@ src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsa
 
 <img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(9).png">
 
-<img class="comment-title"
-src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(8).png">
+<img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(8).png">
 
 </div>
 
@@ -232,78 +211,66 @@ src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsa
 
 <div class="comment-box">
 <div class="comment-meta">Tue. Feb. 10 - MrJay832</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 She’s my favorite girl. Never a let down!
 </div>
 </div>
 
 <div class="comment-box">
 <div class="comment-meta">Mon. Nov. 10 - Rouge_kermit26</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 100% real and amazing
 </div>
 </div>
 
 <div class="comment-box">
 <div class="comment-meta">Wed. Jul. 2 - ghave</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 She is a gem.
 </div>
 </div>
 
 <div class="comment-box">
 <div class="comment-meta">Thu. Jun. 12 - QVBuster288</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 Real y buen precio
 </div>
 </div>
 
 <div class="comment-box">
 <div class="comment-meta">Thu. Jun. 12 - QVBuster288</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 Real y good price
 </div>
 </div>
 
 <div class="comment-box">
 <div class="comment-meta">Wed. Jun. 11 - Odracir06</div>
-
+<div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-
-<div class="comment-text">
 Ella es una diosa, tiene un cuerpo espectacular...
 </div>
 </div>
@@ -314,14 +281,11 @@ Ella es una diosa, tiene un cuerpo espectacular...
 
 <div class="comment-input">
 
-<img class="back-btn"
-src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(6).png">
+<img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(6).png">
 
 <input type="text" placeholder="Enter Comment...">
 
-<span class="note">
-NOTE: Douchebag Comments will be deleted and user's access terminated.
-</span>
+<span class="note">NOTE: Douchebag Comments will be deleted and user's access terminated.</span>
 
 </div>
 
