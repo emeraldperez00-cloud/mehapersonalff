@@ -19,6 +19,7 @@ background:#e8e5bf;
 background:#0b0e3f;
 padding:10px;
 align-items:center;
+display:flex;
 }
 
 .header img{
@@ -61,6 +62,7 @@ height:90px;
 /* COMMENT AREA */
 
 .comments{
+padding-bottom:120px;
 width:92%;
 max-width:750px;
 margin:auto;
@@ -129,27 +131,33 @@ position:fixed;
 bottom:0;
 left:0;
 width:100%;
-background:#e6e6e6;
+background:#d9d6b0;
 display:flex;
 align-items:center;
-padding:10px;
+justify-content:space-between;
+padding:10px 15px;
+box-shadow:0 -2px 6px rgba(0,0,0,0.25);
+z-index:999;
+}
+
+.comment-input .left{
+display:flex;
+align-items:center;
 gap:10px;
 }
 
-.comment-input img{
-height:50px;
+.comment-input .back-btn{
+height:55px;
 }
 
-.comment-input input{
-flex:1;
-padding:10px;
-border-radius:20px;
-border:1px solid #ccc;
+.comment-input .note{
+font-size:12px;
+color:#444;
+font-weight:bold;
 }
 
-.note{
-font-size:11px;
-color:#555;
+.comment-input .right-img{
+height:70px;
 }
 
 /* MOBILE */
@@ -277,11 +285,21 @@ tiene un cuerpo espectacular
 <!-- COMMENT INPUT -->
 
 
-<img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(9).png">
+<div class="comment-input">
 
-<input type="text" placeholder="Enter Comment...">
+<div class="left">
+<img class="back-btn"
+src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(6).png">
 
-<span class="note">NOTE: Douchebag Comments will be deleted and user's access terminated.</span>
+<span class="note">
+NOTE: Douchebag Comments will be deleted and user's access terminated.
+</span>
+</div>
+
+<img class="right-img"
+src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(7).png">
+
+</div>
 
 </div>
 
