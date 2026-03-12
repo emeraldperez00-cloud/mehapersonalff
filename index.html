@@ -52,20 +52,29 @@ height:40px;
 
 /* NAV BAR */
 
+/* NAV BAR */
+
 .nav{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
+flex-wrap:nowrap;      /* keep everything on one line */
+justify-content:space-between;
+align-items:center;
 background:#c41212;
+overflow-x:auto;       /* allows scroll if screen is very small */
 }
 
 .nav a{
-padding:8px 12px;
+flex:1;                /* evenly space buttons */
+display:flex;
+justify-content:center;
+align-items:center;
+padding:10px 8px;
 border-right:1px solid #880909;
 }
 
 .nav img{
-height:20px;
+height:30px;           /* bigger images */
+width:auto;
 }
 
 .nav .active{
