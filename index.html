@@ -47,7 +47,8 @@ padding:10px;
 }
 
 .header img{
-height:40px;
+height:60px;   /* bigger logo */
+width:auto;
 }
 
 /* NAV BAR */
@@ -194,38 +195,34 @@ object-fit:contain;
 
 /* TABLETS */
 
-@media (min-width:600px){
+@media (max-width:480px){
 
 .header img{
-height:55px;
+height:75px;
+width:auto;
 }
 
 .nav img{
-height:26px;
+height:36px;
 }
 
 .comment-header img{
-height:90px;
-}
-
-.comment-meta{
-font-size:20px;
-}
-
-.comment-text{
-font-size:20px;
+max-width:95%;
 }
 
 .comment-input{
-height:85px;
+height:110px;
+}
+
+.comment-input .back-btn{
+height:70px;
 }
 
 .comment-input .right-img{
-height:75px;
+height:100px;
 }
 
 }
-
 /* DESKTOP */
 
 @media (min-width:900px){
