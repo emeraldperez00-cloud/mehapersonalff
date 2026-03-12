@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,7 +9,6 @@
 <style>
 
 /* RESET */
-
 *{
 margin:0;
 padding:0;
@@ -21,16 +21,7 @@ background:#e8e5bf;
 line-height:1.4;
 }
 
-/* IMAGES */
-
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
-
 /* HEADER */
-
 .header{
 background:#0b0e3f;
 display:flex;
@@ -46,7 +37,6 @@ height:auto;
 }
 
 /* NAV */
-
 .nav{
 display:flex;
 flex-wrap:nowrap;
@@ -67,15 +57,9 @@ border-right:1px solid #880909;
 
 .nav img{
 height:60px;
-width:auto;
-}
-
-.nav .active{
-background:black;
 }
 
 /* COMMENT HEADER */
-
 .comment-header{
 display:flex;
 align-items:center;
@@ -88,16 +72,15 @@ width:100%;
 max-width:420px;
 }
 
-/* COMMENTS */
-
+/* COMMENTS AREA */
 .comments{
 width:95%;
+max-width:750px;
 margin:auto;
 padding-bottom:120px;
 }
 
-/* COMMENT CARD */
-
+/* COMMENT BOX */
 .comment-box{
 background:#cbd7b9;
 border-radius:14px;
@@ -106,8 +89,6 @@ margin-bottom:20px;
 box-shadow:0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* META */
-
 .comment-meta{
 font-weight:bold;
 color:#7c8b6a;
@@ -115,19 +96,15 @@ padding:6px 12px;
 font-size:16px;
 }
 
-/* TEXT */
-
 .comment-text{
 background:#f3f3f3;
 border-radius:10px;
-padding:10px;
-padding-bottom:30px;
+padding:12px;
 font-size:16px;
 position:relative;
 }
 
 /* BUTTONS */
-
 .actions{
 position:absolute;
 right:6px;
@@ -153,81 +130,43 @@ background:#ff3b3b;
 color:white;
 }
 
-/* FOOTER */
-
-.comment-input{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-height:95px;
-background:#d7d4ad;
-display:flex;
-align-items:center;
-gap:8px;
-padding:0 12px;
-z-index:999;
-box-shadow:0 -3px 6px rgba(0,0,0,0.25);
-}
-
-.back-btn{
-height:65px;
-}
-
-.right-img{
-height:85px;
-}
-
-/* MOBILE */
-
-@media (max-width:480px){
-
-.header img{
-width:260px;
-}
-
-.nav img{
-height:36px;
-}
-
-.comment-header img{
-max-width:95%;
-}
-
-.comment-input{
-height:110px;
-}
-
-.back-btn{
-height:70px;
-}
-
-.right-img{
-height:100px;
-}
-
-}
-
-/* DESKTOP */
-
-@media (min-width:900px){
-
-.comments{
+/* COMMENT FORM */
+.comment-form{
+width:95%;
 max-width:750px;
-margin:auto;
+margin:20px auto;
+background:#cbd7b9;
+padding:15px;
+border-radius:12px;
 }
 
-.comment-meta{
-font-size:22px;
+.comment-form input,
+.comment-form textarea{
+width:100%;
+margin-bottom:10px;
+padding:8px;
+font-size:14px;
+border:1px solid #aaa;
+border-radius:6px;
 }
 
-.comment-text{
-font-size:22px;
+.comment-form button{
+background:#0b0e3f;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
 }
 
+.comment-form button:hover{
+background:#000;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -241,43 +180,74 @@ font-size:22px;
 <a href="#"><img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(2).png"></a>
 <a href="#"><img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(3).png"></a>
 <a href="#"><img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(4).png"></a>
-<a class="active" href="#"><img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(6).png"></a>
+<a href="#"><img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(6).png"></a>
 </div>
 
 <div class="comment-header">
 <img src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/main/image-Picsart-BackgroundRemover%20(8).png">
 </div>
 
-<div class="comments">
+<!-- COMMENT FORM -->
+
+<div class="comment-form">
+<input type="text" id="username" placeholder="Your name">
+<textarea id="commentText" rows="3" placeholder="Write a comment"></textarea>
+<button onclick="addComment()">Add Comment</button>
+</div>
+
+<!-- COMMENTS LIST -->
+
+<div class="comments" id="commentsList">
 
 <div class="comment-box">
-<div class="comment-meta">Tue. Mar. 9 - MaxCapIL</div>
+<div class="comment-meta">Sample - User</div>
 <div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-She is a scammer yesterday scam me 80 bucks
+Example comment already here.
 </div>
 </div>
 
+</div>
+
+<script>
+
+function addComment(){
+
+let name = document.getElementById("username").value.trim();
+let text = document.getElementById("commentText").value.trim();
+
+if(name === "" || text === ""){
+alert("Please enter name and comment");
+return;
+}
+
+let date = new Date();
+let dateStr = date.toDateString();
+
+let commentHTML = `
 <div class="comment-box">
-<div class="comment-meta">Wed. Mar. 10 - John77</div>
+<div class="comment-meta">${dateStr} - ${name}</div>
 <div class="comment-text">
 <div class="actions">
 <a class="delete" href="#">DELETE</a>
 <a class="report" href="#">REPORT</a>
 </div>
-She wasted my time and never showed up
+${text}
 </div>
 </div>
+`;
 
-</div>
+document.getElementById("commentsList").insertAdjacentHTML("afterbegin", commentHTML);
 
-<div class="comment-input">
-<img class="back-btn" src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/refs/heads/main/image-Picsart-BackgroundRemover%20(9).png">
-<img class="right-img" src="https://raw.githubusercontent.com/emeraldperez00-cloud/img/refs/heads/main/commentFooterWithFace-Picsart-BackgroundRemover.png">
-</div>
+document.getElementById("username").value="";
+document.getElementById("commentText").value="";
+
+}
+
+</script>
 
 </body>
 </html>
